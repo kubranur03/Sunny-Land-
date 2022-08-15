@@ -14,10 +14,17 @@ public class FrogController : MonoBehaviour
 
     public SpriteRenderer sr;
 
+    public float hareketsuresi, beklemesuresi;
+
+    float hareketsayaci, beklemesayaci;
+
+    Animator anim;
+
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Start()
@@ -26,31 +33,62 @@ public class FrogController : MonoBehaviour
         rightTarget.parent = null;
 
         rightSide = true;
+
+        hareketsayaci = hareketsuresi;
     }
 
     private void Update()
     {
-        if (rightSide)
+
+        if (hareketsayaci > 0)
         {
-            rb.velocity = new Vector2(hareketHizi, rb.velocity.y);
+            hareketsayaci -= Time.deltaTime;
 
-            sr.flipX = true;
-
-            if(transform.position.x> rightTarget.position.x)
+            if (rightSide)
             {
-                rightSide = false;
+                rb.velocity = new Vector2(hareketHizi, rb.velocity.y);
+
+                sr.flipX = true;
+
+                if (transform.position.x > rightTarget.position.x)
+                {
+                    rightSide = false;
+                }
             }
+            else
+            {
+                rb.velocity = new Vector2(-hareketHizi, rb.velocity.y);
+
+                sr.flipX = false;
+
+                if (transform.position.x < leftTarget.position.x)
+                {
+                    rightSide = true;
+                }
+            }
+
+            if (hareketsayaci <= 0) ;
+            {
+                beklemesayaci = Random.Range(beklemesuresi * 0.7f, beklemesuresi * 1.2f); ;
+
+            }
+            anim.SetBool("hareketediyor", true);
         }
-        else
+
+        else if (beklemesayaci > 0)
         {
-            rb.velocity = new Vector2(-hareketHizi, rb.velocity.y);
+            beklemesayaci -= Time.deltaTime;
+            rb.velocity = new Vector2(0, rb.velocity.y);
 
-            sr.flipX = false;
-
-            if (transform.position.x < leftTarget.position.x)
+            if (beklemesayaci <= 0)
             {
-                rightSide = true;
+                hareketsayaci = Random.Range(hareketsuresi * 0.7f, hareketsuresi * 1.2f); ;
             }
+            anim.SetBool("hareketediyor", false);
         }
+        }
+
+
+
     }
-}
+
