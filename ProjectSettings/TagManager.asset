@@ -44,9 +44,21 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: house
+    uniqueID: 3318797219
+    locked: 0
+  - name: tilemaps
+    uniqueID: 2342049999
+    locked: 0
   - name: "cevreElemanlar\u0131"
     uniqueID: 3146583571
     locked: 0
+  - name: efektler
+    uniqueID: 4250229517
+    locked: 0
   - name: Player
     uniqueID: 2838989933
+    locked: 0
+  - name: Back
+    uniqueID: 3435838677
     locked: 0

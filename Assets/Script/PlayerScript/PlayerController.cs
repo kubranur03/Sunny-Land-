@@ -16,6 +16,11 @@ public class PlayerController : MonoBehaviour
     bool ikikezziplayabilirmi;
 
 
+    public float KickBackTime, KickBackStrength;
+    float KickBackCounter;
+    bool direction;
+
+
     Rigidbody2D rb;
 
     Animator anim;
@@ -29,9 +34,32 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        HareketEttirFNC();
-        ZiplaFNC();
-        YonuDegistir();
+        if(KickBackCounter<=0)
+        {
+
+            HareketEttirFNC();
+            ZiplaFNC();
+            YonuDegistir();
+        }
+        else
+        {
+            KickBackCounter -= Time.deltaTime;
+
+            if(direction)
+            {
+                rb.velocity = new Vector2(-KickBackStrength, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(KickBackStrength, rb.velocity.y);
+            }
+        }
+
+
+
+        anim.SetFloat("hareketHizi", Mathf.Abs(rb.velocity.x));
+        anim.SetBool("yerdemi", Yerdemi);
+
     }
 
     void HareketEttirFNC()
@@ -72,8 +100,7 @@ public class PlayerController : MonoBehaviour
 
 
         }
-        anim.SetFloat("hareketHizi", Mathf.Abs(rb.velocity.x));
-        anim.SetBool("yerdemi", Yerdemi);
+        
 
     }
 
@@ -83,13 +110,25 @@ public class PlayerController : MonoBehaviour
 
         if(rb.velocity.x>0)
         {
+            direction = true;
             geciciScale.x = 1f;
         }else if(rb.velocity.x<0)
         {
+            direction = false;
             geciciScale.x = -1f;
         }
 
         transform.localScale = geciciScale;    
     }
+
+    public void KickBackFNC()
+    {
+        KickBackCounter = KickBackTime;
+        rb.velocity = new Vector2(0, rb.velocity.y);
+
+        anim.SetTrigger("damage");
+
+    }
+
 }
 

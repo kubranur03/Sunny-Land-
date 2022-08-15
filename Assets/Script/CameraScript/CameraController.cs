@@ -41,7 +41,7 @@ public class CameraController : MonoBehaviour
     {
         Vector2 aradakiMiktar = new Vector2(transform.position.x - sonPos.x, transform.position.y - sonPos.y);
 
-        altZemin.position += new Vector3(aradakiMiktar.x, aradakiMiktar.y, 0f);
+       // altZemin.position += new Vector3(aradakiMiktar.x, aradakiMiktar.y, 0f);
         ortaZemin.position += new Vector3(aradakiMiktar.x, aradakiMiktar.y, 0f)*.5f;
 
         sonPos = transform.position;
