@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     Animator anim;
 
+    public float ZiplaZiplaGucu;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -129,6 +131,12 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("damage");
 
     }
+
+    public void ZiplaZiplaFNC()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, ZiplaZiplaGucu);
+    }
+
 
 }
 
