@@ -5,7 +5,7 @@ using UnityEngine;
 public class TankController : MonoBehaviour
 {
 
-    public enum TankdDurumlari { atesEtme, darbeAlma, hareketEtme };
+    public enum TankdDurumlari { atesEtme, darbeAlma, hareketEtme, TankYokOldu };
     public TankdDurumlari gecerliDurum;
 
     [SerializeField]
@@ -33,6 +33,12 @@ public class TankController : MonoBehaviour
     [Header("Darbe")]
     public float darbeSuresi;
     float darbesayaci;
+
+    [Header("CanDurumu")]
+    public int CanDurumu = 5;
+    public GameObject tankPatlamaEfekti;
+    bool YenildiMi;
+    public float mermiSuresiArttir, mAyinBirakmaSuresiArttir;
 
     public GameObject tankEziciKutu;
 
@@ -71,6 +77,16 @@ public class TankController : MonoBehaviour
                     {
                         gecerliDurum = TankdDurumlari.hareketEtme;
                         MayinBirakmaSayac = 0;
+
+                        if (YenildiMi)
+                        {
+                            TankObje.gameObject.SetActive(false);
+                            Instantiate(tankPatlamaEfekti, transform.position, transform.rotation);
+
+
+                            gecerliDurum = TankdDurumlari.TankYokOldu;
+
+                        }
                     }
                 }
                 break;
@@ -147,6 +163,18 @@ public class TankController : MonoBehaviour
             }
         }
 
+        CanDurumu--;
+
+        if(CanDurumu <= 0)
+        {
+            YenildiMi = true;
+        }
+        else
+        {
+            mermiAtmaSuresi /= mermiSuresiArttir;
+            MayinBirakmaSüresi /= mAyinBirakmaSuresiArttir;
+
+        }
 
 
     }
