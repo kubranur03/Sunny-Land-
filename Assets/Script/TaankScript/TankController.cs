@@ -18,6 +18,12 @@ public class TankController : MonoBehaviour
     public Transform solhedef, saghedef;
     bool rightSide;
 
+    [Header("Mayin")]
+    public GameObject Mayin;
+    public Transform MayinMerkezNoktasi;
+    public float MayinBirakmaSüresi;
+    float MayinBirakmaSayac;
+
     [Header("AteþEtme")]
     public GameObject mermi;
     public Transform mermiMerkezi;
@@ -27,6 +33,8 @@ public class TankController : MonoBehaviour
     [Header("Darbe")]
     public float darbeSuresi;
     float darbesayaci;
+
+    public GameObject tankEziciKutu;
 
 
     private void Start()
@@ -41,6 +49,15 @@ public class TankController : MonoBehaviour
         {
             case TankdDurumlari.atesEtme:
                 //ateþ edildiðinde olacak olan durumlar
+
+                mermiSayaci -= Time.deltaTime;
+
+                if (mermiSayaci <= 0)
+                {
+                    mermiSayaci = mermiAtmaSuresi;
+                    var yeniMermi = Instantiate(mermi, mermiMerkezi.position, mermiMerkezi.rotation);
+                    yeniMermi.transform.localScale = TankObje.localScale;
+                }
                 break;
 
             case TankdDurumlari.darbeAlma:
@@ -53,6 +70,7 @@ public class TankController : MonoBehaviour
                     if (darbesayaci <= 0)
                     {
                         gecerliDurum = TankdDurumlari.hareketEtme;
+                        MayinBirakmaSayac = 0;
                     }
                 }
                 break;
@@ -69,10 +87,8 @@ public class TankController : MonoBehaviour
                     {
                         TankObje.localScale = new Vector3(1, 1, 1);
                         rightSide = false;
-                        gecerliDurum = TankdDurumlari.atesEtme;
-                        mermiSayaci = mermiAtmaSuresi;
 
-                        anim.SetTrigger("stopmoving");
+                        HareketiDurdurFNC();
 
 
                     }
@@ -84,12 +100,19 @@ public class TankController : MonoBehaviour
                     {
                         TankObje.localScale = new Vector3(-1, 1, 1);
                         rightSide = true;
-                        gecerliDurum = TankdDurumlari.atesEtme;
-                        mermiSayaci = mermiAtmaSuresi;
 
-                        anim.SetTrigger("stopmoving");
+                        HareketiDurdurFNC();
 
                     }
+                }
+
+                MayinBirakmaSayac -= Time.deltaTime;
+
+                if(MayinBirakmaSayac <=0)
+                {
+                    MayinBirakmaSayac = MayinBirakmaSüresi;
+
+                    Instantiate(Mayin, MayinMerkezNoktasi.position, MayinMerkezNoktasi.rotation);
                 }
                     break;
 
@@ -108,9 +131,33 @@ public class TankController : MonoBehaviour
 
     public void DarbeAlFNC()
     {
+        tankEziciKutu.SetActive(true);
         gecerliDurum = TankdDurumlari.darbeAlma;
         darbesayaci = darbeSuresi;
 
         anim.SetTrigger("vur");
+
+        mayincontroller[] mayinlar = FindObjectsOfType<mayincontroller>();
+
+        if(mayinlar.Length>0)
+        {
+            foreach (mayincontroller bulunanmayin in mayinlar)
+            {
+                bulunanmayin.PatlamaFNC();
+            }
+        }
+
+
+
+    }
+
+    void HareketiDurdurFNC()
+    {
+        gecerliDurum = TankdDurumlari.atesEtme;
+        mermiSayaci = mermiAtmaSuresi;
+
+        anim.SetTrigger("stopmoving");
+
+
     }
 }
