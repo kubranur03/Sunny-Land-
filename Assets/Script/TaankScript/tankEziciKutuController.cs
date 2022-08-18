@@ -17,8 +17,8 @@ public class tankEziciKutuController : MonoBehaviour
     {
         if (other.CompareTag("Player") && playerController.transform.position.y> transform.position.y)
         {
-            playerController.ZiplaZiplaFNC();
-            tankController.DarbeAlFNC();
+            playerController.JumpJumpFNC();
+            tankController.TakeABlowFNC();
 
             gameObject.SetActive(false);
 

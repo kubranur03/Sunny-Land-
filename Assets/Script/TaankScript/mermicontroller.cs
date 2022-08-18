@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class mermicontroller : MonoBehaviour
 {
-    public float mermiHizi;
+    public float BulletSpeed;
 
     PlayerHealtController playerHealtController;
 
@@ -15,7 +15,7 @@ public class mermicontroller : MonoBehaviour
 
     private void Update()
     {
-        transform.position += new Vector3(-mermiHizi *transform.localScale.x* Time.deltaTime, 0f, 0f);
+        transform.position += new Vector3(-BulletSpeed *transform.localScale.x* Time.deltaTime, 0f, 0f);
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

@@ -133,4 +133,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6664e3680075e7f41b594da431ee0361, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patlamaEfekti: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
+  ExplosionEffect: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}

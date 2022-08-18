@@ -5,86 +5,86 @@ using UnityEngine;
 public class TankController : MonoBehaviour
 {
 
-    public enum TankdDurumlari { atesEtme, darbeAlma, hareketEtme, TankYokOldu };
-    public TankdDurumlari gecerliDurum;
+    public enum TankStates { Shoot, TakeABlow, Move, TankIsGone };
+    public TankStates CurrentStaus;
 
     [SerializeField]
-    Transform TankObje;
+    Transform TankObject;
 
     public Animator anim;
 
-    [Header("Hareket")]
-    public float hareketHizi;
-    public Transform solhedef, saghedef;
+    [Header("Movement")]
+    public float MovementSpeed;
+    public Transform LeftTarget, RightTarget;
     bool rightSide;
 
-    [Header("Mayin")]
-    public GameObject Mayin;
-    public Transform MayinMerkezNoktasi;
-    public float MayinBirakmaSüresi;
-    float MayinBirakmaSayac;
+    [Header("Mine")]
+    public GameObject Mine;
+    public Transform MineCentrePoint;
+    public float MineReleaseTime;
+    float MineReleaseCounter;
 
-    [Header("AteþEtme")]
-    public GameObject mermi;
-    public Transform mermiMerkezi;
-    public float mermiAtmaSuresi;
-    float mermiSayaci;
+    [Header("Shoot")]
+    public GameObject Bullet;
+    public Transform BulletCentre;
+    public float BulletFiringTime;
+    float BulletCounter;
 
-    [Header("Darbe")]
-    public float darbeSuresi;
-    float darbesayaci;
+    [Header("Impact")]
+    public float PulseDuration;
+    float PulseCounter;
 
-    [Header("CanDurumu")]
-    public int CanDurumu = 5;
-    public GameObject tankPatlamaEfekti;
-    bool YenildiMi;
-    public float mermiSuresiArttir, mAyinBirakmaSuresiArttir;
+    [Header("HealthStatus")]
+    public int HealthStatus = 5;
+    public GameObject TankExplosionEffect;
+    bool WasHeDefeated;
+    public float IncreaseBulletDuration, IncreaseMineLayingTime;
 
-    public GameObject tankEziciKutu;
+    public GameObject TankCrusherBox;
 
 
     private void Start()
     {
-        gecerliDurum = TankdDurumlari.atesEtme;
+        CurrentStaus = TankStates.Shoot;
 
     }
 
     private void Update()
     {
-        switch(gecerliDurum)
+        switch(CurrentStaus)
         {
-            case TankdDurumlari.atesEtme:
+            case TankStates.Shoot:
                 //ateþ edildiðinde olacak olan durumlar
 
-                mermiSayaci -= Time.deltaTime;
+                BulletCounter -= Time.deltaTime;
 
-                if (mermiSayaci <= 0)
+                if (BulletCounter <= 0)
                 {
-                    mermiSayaci = mermiAtmaSuresi;
-                    var yeniMermi = Instantiate(mermi, mermiMerkezi.position, mermiMerkezi.rotation);
-                    yeniMermi.transform.localScale = TankObje.localScale;
+                    BulletCounter = BulletFiringTime;
+                    var NewBullet = Instantiate(Bullet, BulletCentre.position, BulletCentre.rotation);
+                    NewBullet.transform.localScale = TankObject.localScale;
                 }
                 break;
 
-            case TankdDurumlari.darbeAlma:
+            case TankStates.TakeABlow:
                 //tank darbe aldýðýnda
 
-                if (darbesayaci > 0)
+                if (PulseCounter > 0)
                 {
-                    darbesayaci -= Time.deltaTime;
+                    PulseCounter -= Time.deltaTime;
 
-                    if (darbesayaci <= 0)
+                    if (PulseCounter <= 0)
                     {
-                        gecerliDurum = TankdDurumlari.hareketEtme;
-                        MayinBirakmaSayac = 0;
+                        CurrentStaus = TankStates.Move;
+                        MineReleaseCounter = 0;
 
-                        if (YenildiMi)
+                        if (WasHeDefeated)
                         {
-                            TankObje.gameObject.SetActive(false);
-                            Instantiate(tankPatlamaEfekti, transform.position, transform.rotation);
+                            TankObject.gameObject.SetActive(false);
+                            Instantiate(TankExplosionEffect, transform.position, transform.rotation);
 
 
-                            gecerliDurum = TankdDurumlari.TankYokOldu;
+                            CurrentStaus = TankStates.TankIsGone;
 
                         }
                     }
@@ -92,43 +92,43 @@ public class TankController : MonoBehaviour
                 break;
 
 
-            case TankdDurumlari.hareketEtme:
+            case TankStates.Move:
                 //tank hareket ettiðinde olacak durumlar
 
                 if (rightSide)
                 {
-                    TankObje.position += new Vector3(hareketHizi * Time.deltaTime, 0f, 0f);
+                    TankObject.position += new Vector3(MovementSpeed * Time.deltaTime, 0f, 0f);
 
-                    if (TankObje.position.x > saghedef.position.x)
+                    if (TankObject.position.x > RightTarget.position.x)
                     {
-                        TankObje.localScale = new Vector3(1, 1, 1);
+                        TankObject.localScale = new Vector3(1, 1, 1);
                         rightSide = false;
 
-                        HareketiDurdurFNC();
+                        StopTheMovementFNC();
 
 
                     }
                 }
                 else
                 {
-                    TankObje.position -= new Vector3(hareketHizi * Time.deltaTime, 0f, 0f);
-                    if (TankObje.position.x < solhedef.position.x)
+                    TankObject.position -= new Vector3(MovementSpeed * Time.deltaTime, 0f, 0f);
+                    if (TankObject.position.x < LeftTarget.position.x)
                     {
-                        TankObje.localScale = new Vector3(-1, 1, 1);
+                        TankObject.localScale = new Vector3(-1, 1, 1);
                         rightSide = true;
 
-                        HareketiDurdurFNC();
+                        StopTheMovementFNC();
 
                     }
                 }
 
-                MayinBirakmaSayac -= Time.deltaTime;
+                MineReleaseCounter -= Time.deltaTime;
 
-                if(MayinBirakmaSayac <=0)
+                if(MineReleaseCounter <=0)
                 {
-                    MayinBirakmaSayac = MayinBirakmaSüresi;
+                    MineReleaseCounter = MineReleaseTime;
 
-                    Instantiate(Mayin, MayinMerkezNoktasi.position, MayinMerkezNoktasi.rotation);
+                    Instantiate(Mine, MineCentrePoint.position, MineCentrePoint.rotation);
                 }
                     break;
 
@@ -139,17 +139,17 @@ public class TankController : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.R))
         {
-            DarbeAlFNC();
+            TakeABlowFNC();
         }
     }
 
 
 
-    public void DarbeAlFNC()
+    public void TakeABlowFNC()
     {
-        tankEziciKutu.SetActive(true);
-        gecerliDurum = TankdDurumlari.darbeAlma;
-        darbesayaci = darbeSuresi;
+        TankCrusherBox.SetActive(true);
+        CurrentStaus = TankStates.TakeABlow;
+        PulseCounter = PulseDuration;
 
         anim.SetTrigger("vur");
 
@@ -159,30 +159,30 @@ public class TankController : MonoBehaviour
         {
             foreach (mayincontroller bulunanmayin in mayinlar)
             {
-                bulunanmayin.PatlamaFNC();
+                bulunanmayin.ExplosionFNC();
             }
         }
 
-        CanDurumu--;
+        HealthStatus--;
 
-        if(CanDurumu <= 0)
+        if(HealthStatus <= 0)
         {
-            YenildiMi = true;
+            WasHeDefeated = true;
         }
         else
         {
-            mermiAtmaSuresi /= mermiSuresiArttir;
-            MayinBirakmaSüresi /= mAyinBirakmaSuresiArttir;
+            BulletFiringTime /= IncreaseBulletDuration;
+            MineReleaseTime /= IncreaseMineLayingTime;
 
         }
 
 
     }
 
-    void HareketiDurdurFNC()
+    void StopTheMovementFNC()
     {
-        gecerliDurum = TankdDurumlari.atesEtme;
-        mermiSayaci = mermiAtmaSuresi;
+        CurrentStaus = TankStates.Shoot;
+        BulletCounter = BulletFiringTime;
 
         anim.SetTrigger("stopmoving");
 

@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 525994363}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1.28, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6730793716308679664}
@@ -76,17 +76,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8c818ad44f73634681a3d5de0fd7a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gecerliDurum: 0
-  TankObje: {fileID: 6730793716308679664}
+  CurrentStaus: 0
+  TankObject: {fileID: 6730793716308679664}
   anim: {fileID: 6730793716308679671}
-  hareketHizi: 10
-  solhedef: {fileID: 6730793716996011263}
-  saghedef: {fileID: 6730793716264006278}
-  mermi: {fileID: 3670753544020190030, guid: 4353dab595251d8478438939bc808f92, type: 3}
-  mermiMerkezi: {fileID: 6730793715597961748}
-  mermiAtmaSuresi: 1.5
-  darbeSuresi: 2
-  tankEziciKutu: {fileID: 6730793715719888318}
+  MovementSpeed: 10
+  LeftTarget: {fileID: 6730793716996011263}
+  RightTarget: {fileID: 6730793716264006278}
+  Mine: {fileID: 0}
+  MineCentrePoint: {fileID: 525994364}
+  MineReleaseTime: 1
+  Bullet: {fileID: 0}
+  BulletCentre: {fileID: 6730793715597961748}
+  BulletFiringTime: 1.5
+  PulseDuration: 2
+  HealthStatus: 5
+  TankExplosionEffect: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
+  IncreaseBulletDuration: 1.2
+  IncreaseMineLayingTime: 1.2
+  TankCrusherBox: {fileID: 6730793715719888318}
 --- !u!1 &6730793715597961749
 GameObject:
   m_ObjectHideFlags: 0

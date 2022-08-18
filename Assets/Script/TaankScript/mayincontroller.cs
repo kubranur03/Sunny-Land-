@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class mayincontroller : MonoBehaviour
 {
-    public GameObject patlamaEfekti;
+    public GameObject ExplosionEffect;
 
     PlayerHealtController playerHealtController;
 
@@ -17,7 +17,7 @@ public class mayincontroller : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            PatlamaFNC(); 
+            ExplosionFNC(); 
 
             playerHealtController.takeDamage();
 
@@ -26,10 +26,10 @@ public class mayincontroller : MonoBehaviour
     }
 
 
-    public void PatlamaFNC()
+    public void ExplosionFNC()
     {
         Destroy(this.gameObject);
 
-        Instantiate(patlamaEfekti, transform.position, transform.rotation);
+        Instantiate(ExplosionEffect, transform.position, transform.rotation);
     }
 }

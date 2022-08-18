@@ -7,7 +7,7 @@ public class EziciKutuKontrol : MonoBehaviour
 
 
     [SerializeField]
-    GameObject YokOlma;
+    GameObject Extinction;
 
     PlayerController playerController;
 
@@ -22,9 +22,9 @@ public class EziciKutuKontrol : MonoBehaviour
         if (other.CompareTag("Kurbaga"))
         {
             other.transform.parent.gameObject.SetActive(false);
-            Instantiate(YokOlma, transform.position, transform.rotation);
+            Instantiate(Extinction, transform.position, transform.rotation);
 
-            playerController.ZiplaZiplaFNC();
+            playerController.JumpJumpFNC();
         }
     }
 }

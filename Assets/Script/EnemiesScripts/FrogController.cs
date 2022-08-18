@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FrogController : MonoBehaviour
 {
-    public float hareketHizi;
+    public float MovementSpeed;
 
     public Transform leftTarget, rightTarget;
 
@@ -14,9 +14,9 @@ public class FrogController : MonoBehaviour
 
     public SpriteRenderer sr;
 
-    public float hareketsuresi, beklemesuresi;
+    public float MovementTime, StandbyTime;
 
-    float hareketsayaci, beklemesayaci;
+    float MovementCounter, StandbyCounter;
 
     Animator anim;
 
@@ -34,19 +34,19 @@ public class FrogController : MonoBehaviour
 
         rightSide = true;
 
-        hareketsayaci = hareketsuresi;
+        MovementCounter = MovementTime;
     }
 
     private void Update()
     {
 
-        if (hareketsayaci > 0)
+        if (MovementCounter > 0)
         {
-            hareketsayaci -= Time.deltaTime;
+            MovementCounter -= Time.deltaTime;
 
             if (rightSide)
             {
-                rb.velocity = new Vector2(hareketHizi, rb.velocity.y);
+                rb.velocity = new Vector2(MovementSpeed, rb.velocity.y);
 
                 sr.flipX = true;
 
@@ -57,7 +57,7 @@ public class FrogController : MonoBehaviour
             }
             else
             {
-                rb.velocity = new Vector2(-hareketHizi, rb.velocity.y);
+                rb.velocity = new Vector2(-MovementSpeed, rb.velocity.y);
 
                 sr.flipX = false;
 
@@ -67,24 +67,24 @@ public class FrogController : MonoBehaviour
                 }
             }
 
-            if (hareketsayaci <= 0) ;
+            if (MovementCounter <= 0) 
             {
-                beklemesayaci = Random.Range(beklemesuresi * 0.7f, beklemesuresi * 1.2f); ;
+                StandbyCounter = Random.Range(StandbyTime * 0.7f, StandbyTime * 1.2f); ;
 
             }
-            anim.SetBool("hareketediyor", true);
+            anim.SetBool("ItIsMoving", true);
         }
 
-        else if (beklemesayaci > 0)
+        else if (StandbyCounter > 0)
         {
-            beklemesayaci -= Time.deltaTime;
+            StandbyCounter -= Time.deltaTime;
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-            if (beklemesayaci <= 0)
+            if (StandbyCounter <= 0)
             {
-                hareketsayaci = Random.Range(hareketsuresi * 0.7f, hareketsuresi * 1.2f); ;
+                MovementCounter = Random.Range(MovementTime * 0.7f, MovementTime * 1.2f); ;
             }
-            anim.SetBool("hareketediyor", false);
+            anim.SetBool("ItIsMoving", false);
         }
         }
 

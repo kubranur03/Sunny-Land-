@@ -5,46 +5,46 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    Transform hedefTransform;
+    Transform targetTransform;
 
     [SerializeField]
     float minY, maxY;
 
-    Vector2 sonPos;
+    Vector2 LastPos;
 
 
     [SerializeField]
-    Transform altZemin, ortaZemin;
+    Transform Subfloor, MediumGround;
 
     private void Start()
     {
 
-        sonPos = transform.position;
+        LastPos = transform.position;
     }
 
     private void Update()
     {
 
-        KamerayiSinirlaFNC();
-        ZeminleriHareketEttirFNC();
+        LimitCameraFNC();
+        MoveToFloorsFNC();
 
     }
 
-    void KamerayiSinirlaFNC()
+    void LimitCameraFNC()
     {
-        transform.position = new Vector3(hedefTransform.position.x,
+        transform.position = new Vector3(targetTransform.position.x,
             Mathf.Clamp(transform.position.y, minY, maxY),
             transform.position.z);
     }
 
-    void ZeminleriHareketEttirFNC()
+    void MoveToFloorsFNC()
     {
-        Vector2 aradakiMiktar = new Vector2(transform.position.x - sonPos.x, transform.position.y - sonPos.y);
+        Vector2 AmountInBetween = new Vector2(transform.position.x - LastPos.x, transform.position.y - LastPos.y);
 
        // altZemin.position += new Vector3(aradakiMiktar.x, aradakiMiktar.y, 0f);
-        ortaZemin.position += new Vector3(aradakiMiktar.x, aradakiMiktar.y, 0f)*.5f;
+        MediumGround.position += new Vector3(AmountInBetween.x, AmountInBetween.y, 0f)*.5f;
 
-        sonPos = transform.position;
+        LastPos = transform.position;
 
     }
 

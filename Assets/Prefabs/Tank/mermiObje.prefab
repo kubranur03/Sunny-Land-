@@ -143,4 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f126bdfd002f5647bcd8bdb02109892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mermiHizi: 5
+  BulletSpeed: 2

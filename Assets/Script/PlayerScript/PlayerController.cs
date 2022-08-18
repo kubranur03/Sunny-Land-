@@ -5,15 +5,15 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float HareketHizi;
+    float MovementSpeed;
 
     [SerializeField]
-    float ZiplamaGucu;
+    float JumpingPower;
 
-    bool Yerdemi;
-    public Transform zeminkontrolnoktasi;
-    public LayerMask zeminLayer;
-    bool ikikezziplayabilirmi;
+    bool IsItOnTheGround;
+    public Transform GroundControllPoint;
+    public LayerMask GroundLayer;
+    bool CanJumpTwice;
 
 
     public float KickBackTime, KickBackStrength;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
     Animator anim;
 
-    public float ZiplaZiplaGucu;
+    public float JumpJumpPower;
 
     private void Awake()
     {
@@ -39,9 +39,9 @@ public class PlayerController : MonoBehaviour
         if(KickBackCounter<=0)
         {
 
-            HareketEttirFNC();
-            ZiplaFNC();
-            YonuDegistir();
+            MoveFNC();
+            JumpFNC();
+            ChangeDirection();
         }
         else
         {
@@ -59,42 +59,42 @@ public class PlayerController : MonoBehaviour
 
 
 
-        anim.SetFloat("hareketHizi", Mathf.Abs(rb.velocity.x));
-        anim.SetBool("yerdemi", Yerdemi);
+        anim.SetFloat("MovementSpeed", Mathf.Abs(rb.velocity.x));
+        anim.SetBool("IsItOnTheGround", IsItOnTheGround);
 
     }
 
-    void HareketEttirFNC()
+    void MoveFNC()
     {
         float h = Input.GetAxis("Horizontal");
-        float hiz = h * HareketHizi;
+        float hiz = h * MovementSpeed;
 
         rb.velocity = new Vector2(hiz, rb.velocity.y);
 
     }
 
-    void ZiplaFNC()
+    void JumpFNC()
     {
-        Yerdemi = Physics2D.OverlapCircle(zeminkontrolnoktasi.position, .2f, zeminLayer);
+        IsItOnTheGround = Physics2D.OverlapCircle(GroundControllPoint.position, .2f, GroundLayer);
         
-        if(Yerdemi)
+        if(IsItOnTheGround)
         {
-            ikikezziplayabilirmi = true;
+            CanJumpTwice = true;
         }
 
         if(Input.GetButtonDown("Jump"))
         {
-            if(Yerdemi)
+            if(IsItOnTheGround)
             {
-                rb.velocity = new Vector2(rb.velocity.x, ZiplamaGucu);
+                rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
 
             }
             else
             {
-                if (ikikezziplayabilirmi)
+                if (CanJumpTwice)
                 {
-                    rb.velocity = new Vector2(rb.velocity.x, ZiplamaGucu);
-                    ikikezziplayabilirmi = false;
+                    rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
+                    CanJumpTwice = false;
                 }
                 
 
@@ -106,21 +106,21 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void YonuDegistir()
+    void ChangeDirection()
     {
-        Vector2 geciciScale = transform.localScale;
+        Vector2 TemporaryScale = transform.localScale;
 
         if(rb.velocity.x>0)
         {
             direction = true;
-            geciciScale.x = 1f;
+            TemporaryScale.x = 1f;
         }else if(rb.velocity.x<0)
         {
             direction = false;
-            geciciScale.x = -1f;
+            TemporaryScale.x = -1f;
         }
 
-        transform.localScale = geciciScale;    
+        transform.localScale = TemporaryScale;    
     }
 
     public void KickBackFNC()
@@ -132,9 +132,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void ZiplaZiplaFNC()
+    public void JumpJumpFNC()
     {
-        rb.velocity = new Vector2(rb.velocity.x, ZiplaZiplaGucu);
+        rb.velocity = new Vector2(rb.velocity.x, JumpJumpPower);
     }
 
 
