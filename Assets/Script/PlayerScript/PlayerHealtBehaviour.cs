@@ -9,7 +9,7 @@ public class PlayerHealtBehaviour : MonoBehaviour
     [SerializeField]
     GameObject disappearanceEffectObject;
 
-    UIcontroller uicontroller;
+    UIBehaviour uicontroller;
 
     [SerializeField] private float invincibilityTime;
     private float invincibilityCounter;
@@ -26,7 +26,7 @@ public class PlayerHealtBehaviour : MonoBehaviour
         playerController = Object.FindObjectOfType<PlayerController>();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        uicontroller = Object.FindObjectOfType<UIcontroller>();
+        uicontroller = Object.FindObjectOfType<UIBehaviour>();
 
     }
 
@@ -73,6 +73,18 @@ public class PlayerHealtBehaviour : MonoBehaviour
             uicontroller.UpdateHealthStatus();
 
         }
+
+    }
+
+    public void IncreaseHealth()
+    {
+        validHealt++;
+
+        if(validHealt >= maxHealt)
+        {
+            validHealt = maxHealt;
+        }
+        uicontroller.UpdateHealthStatus();
 
     }
 }

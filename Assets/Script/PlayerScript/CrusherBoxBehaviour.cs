@@ -11,6 +11,10 @@ public class CrusherBoxBehaviour : MonoBehaviour
 
     PlayerController playerController;
 
+    public float chanceOfCherry;
+
+    public GameObject cherryObject;
+
     private void Awake()
     {
         playerController = Object.FindObjectOfType<PlayerController>();
@@ -25,6 +29,13 @@ public class CrusherBoxBehaviour : MonoBehaviour
             Instantiate(Extinction, transform.position, transform.rotation);
 
             playerController.JumpJump();
+
+            float dropoutInterval = Random.Range(0f, 100f);
+
+            if(dropoutInterval<= chanceOfCherry)
+            {
+                Instantiate(cherryObject, other.transform.position, other.transform.rotation);
+            }
         }
              
     }

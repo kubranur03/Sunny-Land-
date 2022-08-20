@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
-public class UIcontroller : MonoBehaviour
+public class UIBehaviour : MonoBehaviour
 {
     [SerializeField]
     Image heart1_img, heart2_img, heart3_img;
@@ -12,17 +13,22 @@ public class UIcontroller : MonoBehaviour
     [SerializeField]
     Sprite fullheart, halfheart, emptyheart;
 
-    PlayerHealtBehaviour playerHealtController;
+    PlayerHealtBehaviour playerHealtBehaviour;
+    LevelManager levelManager;
+
+    [SerializeField] 
+    TMP_Text JewelsTxt;
 
     private void Awake()
     {
-        playerHealtController = Object.FindObjectOfType<PlayerHealtBehaviour>();
+        playerHealtBehaviour = Object.FindObjectOfType<PlayerHealtBehaviour>();
+        levelManager = Object.FindObjectOfType<LevelManager>();
 
     }
 
     public void UpdateHealthStatus()
     {
-        switch(playerHealtController.validHealt)
+        switch(playerHealtBehaviour.validHealt)
         {
 
             case 6:
@@ -72,4 +78,10 @@ public class UIcontroller : MonoBehaviour
         }
     }
 
+
+    public void UpdateJewelCount()
+    {
+        JewelsTxt.text = levelManager.theNumberOfJewelsCollected.ToString();
+
+    }
 }
