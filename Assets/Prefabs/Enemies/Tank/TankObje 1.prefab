@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 525994364}
   m_Layer: 0
-  m_Name: MayinMerkezNoktasi
+  m_Name: MineCentrePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6730793715449042412}
-  - component: {fileID: 6730793715449042403}
+  - component: {fileID: 1206724879}
   m_Layer: 0
   m_Name: TankObje 1
   m_TagString: Untagged
@@ -64,7 +64,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6730793715449042403
+--- !u!114 &1206724879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,27 +73,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 6730793715449042413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8c818ad44f73634681a3d5de0fd7a2d, type: 3}
+  m_Script: {fileID: 11500000, guid: fef6ad3a25c9dd941b2ee9059e44634b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentStaus: 0
-  TankObject: {fileID: 6730793716308679664}
-  anim: {fileID: 6730793716308679671}
-  MovementSpeed: 10
-  LeftTarget: {fileID: 6730793716996011263}
-  RightTarget: {fileID: 6730793716264006278}
-  Mine: {fileID: 0}
-  MineCentrePoint: {fileID: 525994364}
-  MineReleaseTime: 1
-  Bullet: {fileID: 0}
-  BulletCentre: {fileID: 6730793715597961748}
-  BulletFiringTime: 1.5
-  PulseDuration: 2
-  HealthStatus: 5
-  TankExplosionEffect: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
-  IncreaseBulletDuration: 1.2
-  IncreaseMineLayingTime: 1.2
-  TankCrusherBox: {fileID: 6730793715719888318}
+  tankObject: {fileID: 6730793716308679664}
+  animator: {fileID: 6730793716308679671}
+  movementSpeed: 10
+  leftTargetTransform: {fileID: 6730793716996011263}
+  rightTargetTransform: {fileID: 6730793716264006278}
+  mineObject: {fileID: 4601316289163614160, guid: 76cfec6815609ca499ef0ece45583555, type: 3}
+  mineCentrePoint: {fileID: 525994364}
+  mineReleaseTime: 3
+  bulletObject: {fileID: 3670753544020190030, guid: 4353dab595251d8478438939bc808f92, type: 3}
+  bulletCentreTransform: {fileID: 6730793715597961748}
+  bulletFiringTime: 3
+  pulseDuration: 2
+  tankExplosionEffectObject: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
+  increaseBulletDuration: 1.2
+  increaseMineLayingTime: 1.2
+  tankCrusherBoxObject: {fileID: 6730793715719888318}
 --- !u!1 &6730793715597961749
 GameObject:
   m_ObjectHideFlags: 0
@@ -104,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6730793715597961748}
   m_Layer: 0
-  m_Name: mermimerkez
+  m_Name: BulletCentre
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -134,9 +132,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6730793715719888317}
   - component: {fileID: 6730793715719888307}
-  - component: {fileID: 6730793715719888316}
+  - component: {fileID: 449326246}
   m_Layer: 0
-  m_Name: tankEziciKutu
+  m_Name: TankCrusherBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -182,7 +180,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6730793715719888316
+--- !u!114 &449326246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -191,7 +189,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6730793715719888318}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 52fe174a65fde424692ff6673fd125d9, type: 3}
+  m_Script: {fileID: 11500000, guid: 9b444e23a22011b428778ef09bdb1f84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &6730793716264006279

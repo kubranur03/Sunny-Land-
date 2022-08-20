@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageController : MonoBehaviour
+public class DamageBehaviour : MonoBehaviour
 {
-    PlayerHealtController playerHealtController;
+    PlayerHealtBehaviour playerHealtController;
     private void Awake()
     {
-        playerHealtController = Object.FindObjectOfType<PlayerHealtController>();   
+        playerHealtController = Object.FindObjectOfType<PlayerHealtBehaviour>();   
     }
     private void OnTriggerEnter2D(Collider2D other)
     {

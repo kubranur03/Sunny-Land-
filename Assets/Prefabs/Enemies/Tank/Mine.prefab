@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4601316289163614164}
   - component: {fileID: 4601316289163614165}
   - component: {fileID: 4601316289163614166}
-  - component: {fileID: 2506784679344123622}
+  - component: {fileID: 103941860}
   m_Layer: 0
-  m_Name: Mayin
+  m_Name: Mine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.6
---- !u!114 &2506784679344123622
+--- !u!114 &103941860
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

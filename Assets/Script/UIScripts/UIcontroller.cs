@@ -12,11 +12,11 @@ public class UIcontroller : MonoBehaviour
     [SerializeField]
     Sprite fullheart, halfheart, emptyheart;
 
-    PlayerHealtController playerHealtController;
+    PlayerHealtBehaviour playerHealtController;
 
     private void Awake()
     {
-        playerHealtController = Object.FindObjectOfType<PlayerHealtController>();
+        playerHealtController = Object.FindObjectOfType<PlayerHealtBehaviour>();
 
     }
 

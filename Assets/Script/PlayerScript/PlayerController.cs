@@ -5,32 +5,32 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float MovementSpeed;
+    private float MovementSpeed;
 
     [SerializeField]
-    float JumpingPower;
+    private float JumpingPower;
 
-    bool IsItOnTheGround;
-    public Transform GroundControllPoint;
-    public LayerMask GroundLayer;
-    bool CanJumpTwice;
-
-
-    public float KickBackTime, KickBackStrength;
-    float KickBackCounter;
-    bool direction;
+    private bool IsItOnTheGround;
+    [SerializeField] private Transform GroundControllPoint;
+    [SerializeField] private LayerMask GroundLayer;
+    private bool CanJumpTwice;
 
 
-    Rigidbody2D rb;
+    [SerializeField] private float KickBackTime, KickBackStrength;
+    private float KickBackCounter;
+    private bool canChangeDirection;
 
-    Animator anim;
 
-    public float JumpJumpPower;
+    Rigidbody2D rigidBody2D;
+
+    Animator animator;
+
+    [SerializeField] private float JumpJumpPower;
 
     private void Awake()
     {
-        rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        rigidBody2D = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
 
     }
 
@@ -39,41 +39,41 @@ public class PlayerController : MonoBehaviour
         if(KickBackCounter<=0)
         {
 
-            MoveFNC();
-            JumpFNC();
+            Move();
+            Jump();
             ChangeDirection();
         }
         else
         {
             KickBackCounter -= Time.deltaTime;
 
-            if(direction)
+            if(canChangeDirection)
             {
-                rb.velocity = new Vector2(-KickBackStrength, rb.velocity.y);
+                rigidBody2D.velocity = new Vector2(-KickBackStrength, rigidBody2D.velocity.y);
             }
             else
             {
-                rb.velocity = new Vector2(KickBackStrength, rb.velocity.y);
+                rigidBody2D.velocity = new Vector2(KickBackStrength, rigidBody2D.velocity.y);
             }
         }
 
 
 
-        anim.SetFloat("MovementSpeed", Mathf.Abs(rb.velocity.x));
-        anim.SetBool("IsItOnTheGround", IsItOnTheGround);
+        animator.SetFloat("MovementSpeed", Mathf.Abs(rigidBody2D.velocity.x));
+        animator.SetBool("IsItOnTheGround", IsItOnTheGround);
 
     }
 
-    void MoveFNC()
+    void Move()
     {
         float h = Input.GetAxis("Horizontal");
         float hiz = h * MovementSpeed;
 
-        rb.velocity = new Vector2(hiz, rb.velocity.y);
+        rigidBody2D.velocity = new Vector2(hiz, rigidBody2D.velocity.y);
 
     }
 
-    void JumpFNC()
+    void Jump()
     {
         IsItOnTheGround = Physics2D.OverlapCircle(GroundControllPoint.position, .2f, GroundLayer);
         
@@ -86,14 +86,14 @@ public class PlayerController : MonoBehaviour
         {
             if(IsItOnTheGround)
             {
-                rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
+                rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, JumpingPower);
 
             }
             else
             {
                 if (CanJumpTwice)
                 {
-                    rb.velocity = new Vector2(rb.velocity.x, JumpingPower);
+                    rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, JumpingPower);
                     CanJumpTwice = false;
                 }
                 
@@ -110,31 +110,31 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 TemporaryScale = transform.localScale;
 
-        if(rb.velocity.x>0)
+        if(rigidBody2D.velocity.x>0)
         {
-            direction = true;
+            canChangeDirection = true;
             TemporaryScale.x = 1f;
-        }else if(rb.velocity.x<0)
+        }else if(rigidBody2D.velocity.x<0)
         {
-            direction = false;
+            canChangeDirection = false;
             TemporaryScale.x = -1f;
         }
 
         transform.localScale = TemporaryScale;    
     }
 
-    public void KickBackFNC()
+    public void KickBack()
     {
         KickBackCounter = KickBackTime;
-        rb.velocity = new Vector2(0, rb.velocity.y);
+        rigidBody2D.velocity = new Vector2(0, rigidBody2D.velocity.y);
 
-        anim.SetTrigger("damage");
+        animator.SetTrigger("damage");
 
     }
 
-    public void JumpJumpFNC()
+    public void JumpJump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, JumpJumpPower);
+        rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, JumpJumpPower);
     }
 
 

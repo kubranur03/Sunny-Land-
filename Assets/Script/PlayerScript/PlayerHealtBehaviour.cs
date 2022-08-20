@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealtController : MonoBehaviour
+public class PlayerHealtBehaviour : MonoBehaviour
 {
     public int maxHealt, validHealt;
 
     [SerializeField]
-    GameObject disappearanceEffect;
+    GameObject disappearanceEffectObject;
 
     UIcontroller uicontroller;
 
-    public float invincibilityTime;
-    float invincibilityCounter;
+    [SerializeField] private float invincibilityTime;
+    private float invincibilityCounter;
 
-    SpriteRenderer sr;
+    SpriteRenderer spriteRenderer;
 
     PlayerController playerController;
 
@@ -25,7 +25,7 @@ public class PlayerHealtController : MonoBehaviour
 
         playerController = Object.FindObjectOfType<PlayerController>();
 
-        sr = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         uicontroller = Object.FindObjectOfType<UIcontroller>();
 
     }
@@ -43,7 +43,7 @@ public class PlayerHealtController : MonoBehaviour
 
         if (invincibilityCounter <= 0)
         {
-            sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 1f);
+            spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 1f);
 
         }
 
@@ -59,15 +59,15 @@ public class PlayerHealtController : MonoBehaviour
             {
                 validHealt = 0;
                 gameObject.SetActive(false);
-                Instantiate(disappearanceEffect, transform.position, transform.rotation);
+                Instantiate(disappearanceEffectObject, transform.position, transform.rotation);
 
             }
             else
             {
                 invincibilityCounter = invincibilityTime ;
-                sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.5f);
+                spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f);
 
-                playerController.KickBackFNC();
+                playerController.KickBack();
             }
 
             uicontroller.UpdateHealthStatus();

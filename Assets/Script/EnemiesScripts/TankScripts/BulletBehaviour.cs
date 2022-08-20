@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mermicontroller : MonoBehaviour
+public class BulletBehaviour : MonoBehaviour
 {
     public float BulletSpeed;
 
-    PlayerHealtController playerHealtController;
+    PlayerHealtBehaviour playerHealtController;
 
     private void Awake()
     {
-        playerHealtController = Object.FindObjectOfType<PlayerHealtController>();
+        playerHealtController = Object.FindObjectOfType<PlayerHealtBehaviour>();
     }
 
     private void Update()

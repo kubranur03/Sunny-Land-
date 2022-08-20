@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EziciKutuKontrol : MonoBehaviour
+public class CrusherBoxBehaviour : MonoBehaviour
 {
 
 
@@ -24,7 +24,8 @@ public class EziciKutuKontrol : MonoBehaviour
             other.transform.parent.gameObject.SetActive(false);
             Instantiate(Extinction, transform.position, transform.rotation);
 
-            playerController.JumpJumpFNC();
+            playerController.JumpJump();
         }
+             
     }
 }

@@ -2,22 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mayincontroller : MonoBehaviour
+public class MineBehaviour : MonoBehaviour
 {
     public GameObject ExplosionEffect;
 
-    PlayerHealtController playerHealtController;
+    PlayerHealtBehaviour playerHealtController;
 
     private void Awake()
     {
-        playerHealtController = Object.FindObjectOfType<PlayerHealtController>();
+        playerHealtController = Object.FindObjectOfType<PlayerHealtBehaviour>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
-            ExplosionFNC(); 
+            Explosion();
 
             playerHealtController.takeDamage();
 
@@ -26,7 +26,7 @@ public class mayincontroller : MonoBehaviour
     }
 
 
-    public void ExplosionFNC()
+    public void Explosion()
     {
         Destroy(this.gameObject);
 
