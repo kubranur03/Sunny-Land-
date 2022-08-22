@@ -10,15 +10,19 @@ public class PrizeManager : MonoBehaviour
     [SerializeField]
     bool ýsItJewel, isItCherry;
 
-     private bool hasItGathered;
+    [SerializeField]
+    GameObject collection;
+
+
+    private bool hasItGathered;
 
     LevelManager levelManager;
-    UIBehaviour uicontroller;
+    UIBehaviour uIBehaviour;
 
     private void Awake()
     {
         levelManager = Object.FindObjectOfType<LevelManager>();
-        uicontroller = Object.FindObjectOfType<UIBehaviour>();
+        uIBehaviour = Object.FindObjectOfType<UIBehaviour>();
         playerHealtBehaviour = Object.FindObjectOfType<PlayerHealtBehaviour>();
 
     }
@@ -35,7 +39,10 @@ public class PrizeManager : MonoBehaviour
                 hasItGathered = true;
                 Destroy(gameObject);
 
-                uicontroller.UpdateJewelCount();
+                uIBehaviour.UpdateJewelCount();
+
+                Instantiate(collection, transform.position, transform.rotation);
+                
 
             }
 
@@ -47,6 +54,8 @@ public class PrizeManager : MonoBehaviour
                     Destroy(gameObject);
 
                     playerHealtBehaviour.IncreaseHealth();
+
+                    Instantiate(collection, transform.position, transform.rotation);
 
 
                 }
