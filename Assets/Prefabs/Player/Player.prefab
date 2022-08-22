@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7092661832074322627}
   - component: {fileID: 7092661832074322626}
   m_Layer: 7
-  m_Name: ezicikutu
+  m_Name: CrusherBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7092661832074322236}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.46, z: 0}
+  m_LocalPosition: {x: 0, y: -1.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7092661833634929774}
@@ -70,7 +70,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14d22c9edbeb8941b40a6b59774354d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  YokOlma: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
+  Extinction: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
+  chanceOfCherry: 100
+  cherryObject: {fileID: 7134917598569241078, guid: 51b523ebc824ece4fab3016de8c9433d, type: 3}
 --- !u!1 &7092661832893844197
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,7 +83,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7092661832893844202}
   m_Layer: 7
-  m_Name: "zeminkontrolnoktas\u0131"
+  m_Name: GroundControlPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -130,7 +132,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7092661833634929768}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.23, y: -0.05, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -240,15 +242,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693b0b93709d9ee4688339da70db9ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HareketHizi: 10
-  ZiplamaGucu: 12
-  zeminkontrolnoktasi: {fileID: 7092661832893844202}
-  zeminLayer:
+  MovementSpeed: 10
+  JumpingPower: 15
+  GroundControllPoint: {fileID: 7092661832893844202}
+  GroundLayer:
     serializedVersion: 2
     m_Bits: 64
   KickBackTime: 0.25
   KickBackStrength: 5
-  ZiplaZiplaGucu: 20
+  JumpJumpPower: 20
 --- !u!95 &7092661833634929778
 Animator:
   serializedVersion: 3
@@ -282,5 +284,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealt: 6
   validHealt: 0
-  disappearanceEffect: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
+  disappearanceEffectObject: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
   invincibilityTime: 2

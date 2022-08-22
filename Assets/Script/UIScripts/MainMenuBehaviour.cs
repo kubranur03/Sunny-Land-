@@ -13,6 +13,9 @@ public class MainMenuBehaviour : MonoBehaviour
     [SerializeField] private GameObject startButtonObject, exitButtonObject;
 
 
+    [SerializeField] private GameObject fadeScreenObject;
+
+
     private void Start()
     {
         StartCoroutine(OpenInOrderRoutine());
@@ -34,18 +37,26 @@ public class MainMenuBehaviour : MonoBehaviour
         exitButtonObject.GetComponent<CanvasGroup>().DOFade(1, 0.5f);
         exitButtonObject.GetComponent<RectTransform>().DOScale(1, .5f).SetEase(Ease.OutBack);
 
-
-
     }
-
 
     public void StartGame()
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(OpenGameRoutine());
     }
 
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    IEnumerator OpenGameRoutine()
+    {
+        yield return new WaitForSeconds(.1f);
+        fadeScreenObject.GetComponent<CanvasGroup>().DOFade(1, 1f);
+
+        yield return new WaitForSeconds(.1f);
+
+        SceneManager.LoadScene(sceneName);
+
     }
 }
