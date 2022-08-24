@@ -1,10 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+
 
 public class PlayerHealtBehaviour : MonoBehaviour
 {
     public int maxHealt, validHealt;
+    public bool gameOver;
+
+
+    [SerializeField]
+    GameObject gameOverPanel;
 
     [SerializeField]
     GameObject disappearanceEffectObject;
@@ -34,6 +41,8 @@ public class PlayerHealtBehaviour : MonoBehaviour
     private void Start()
     {
         validHealt = maxHealt;
+        gameOverPanel.GetComponent<RectTransform>().localScale = Vector3.zero;
+        gameOverPanel.GetComponent<CanvasGroup>().alpha = 0;
     }
 
 
@@ -60,6 +69,7 @@ public class PlayerHealtBehaviour : MonoBehaviour
                 validHealt = 0;
                 gameObject.SetActive(false);
                 Instantiate(disappearanceEffectObject, transform.position, transform.rotation);
+                GameOver();
 
             }
             else
@@ -85,6 +95,15 @@ public class PlayerHealtBehaviour : MonoBehaviour
             validHealt = maxHealt;
         }
         uicontroller.UpdateHealthStatus();
+
+    }
+
+    void GameOver()
+    {
+        gameOver = true;
+        gameOverPanel.GetComponent<CanvasGroup>().DOFade(1, .5f);
+        gameOverPanel.GetComponent<RectTransform>().DOScale(1, .5f);
+
 
     }
 }

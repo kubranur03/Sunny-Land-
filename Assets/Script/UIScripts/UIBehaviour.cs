@@ -76,9 +76,8 @@ public class UIBehaviour : MonoBehaviour
                 heart3_img.sprite = emptyheart;
                 break;
 
-
-
         }
+        
     }
 
 

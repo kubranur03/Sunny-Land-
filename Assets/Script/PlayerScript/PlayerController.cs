@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     private float KickBackCounter;
     private bool canChangeDirection;
 
+    PlayerHealtBehaviour playerHealtBehaviour;
 
     Rigidbody2D rigidBody2D;
 
@@ -32,6 +33,7 @@ public class PlayerController : MonoBehaviour
 
     private void Awake()
     {
+        playerHealtBehaviour = Object.FindObjectOfType<PlayerHealtBehaviour>();
         rigidBody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
 
@@ -45,6 +47,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (playerHealtBehaviour.gameOver)
+        {
+            return;
+        }
         if(shouldMove)
         {
             if (KickBackCounter <= 0)

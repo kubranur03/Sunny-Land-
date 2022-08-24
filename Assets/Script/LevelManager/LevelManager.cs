@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public static LevelManager instance;
 
     PlayerController playerController;
+    
     UIBehaviour uIBehaviour;
 
     public string sceneName;
@@ -39,6 +40,8 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(.1f);
         SceneManager.LoadScene(sceneName);
     }
+
+   
 
 
 }
