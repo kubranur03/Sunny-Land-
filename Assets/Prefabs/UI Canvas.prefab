@@ -803,4 +803,5 @@ MonoBehaviour:
   fullheart: {fileID: 8109154662235370213, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
   halfheart: {fileID: 2139837793675082937, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
   emptyheart: {fileID: -4390673095631447188, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
+  FadeScreen: {fileID: 1112238347131179915}
   JewelsTxt: {fileID: 3941059148768494271}

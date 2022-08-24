@@ -43,4 +43,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857e1846e56d6be4793db4761ac16827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Level2
   theNumberOfJewelsCollected: 0
