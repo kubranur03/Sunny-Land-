@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -19,8 +20,10 @@ public class UIBehaviour : MonoBehaviour
 
     [SerializeField] private GameObject FadeScreen;
 
+
     [SerializeField] 
     TMP_Text JewelsTxt;
+
 
     private void Awake()
     {
@@ -92,5 +95,8 @@ public class UIBehaviour : MonoBehaviour
         FadeScreen.GetComponent<CanvasGroup>().DOFade(1, .4f);
     }
 
-    
+   
+
+
+
 }
