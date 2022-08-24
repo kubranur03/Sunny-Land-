@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using DG.Tweening;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class UIBehaviour : MonoBehaviour
 
     PlayerHealtBehaviour playerHealtBehaviour;
     LevelManager levelManager;
+
+    [SerializeField] private GameObject FadeScreen;
 
     [SerializeField] 
     TMP_Text JewelsTxt;
@@ -84,4 +87,11 @@ public class UIBehaviour : MonoBehaviour
         JewelsTxt.text = levelManager.theNumberOfJewelsCollected.ToString();
 
     }
+
+    public void OpenFadeScreen()
+    {
+        FadeScreen.GetComponent<CanvasGroup>().DOFade(1, .4f);
+    }
+
+    
 }

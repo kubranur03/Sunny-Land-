@@ -25,7 +25,10 @@ public class PlayerController : MonoBehaviour
 
     Animator animator;
 
-    [SerializeField] private float JumpJumpPower;
+    public bool shouldMove;
+
+
+   [SerializeField] private float JumpJumpPower;
 
     private void Awake()
     {
@@ -34,33 +37,47 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    private void Start()
+    {
+        shouldMove = true;
+        
+    }
+
     private void Update()
     {
-        if(KickBackCounter<=0)
+        if(shouldMove)
         {
-
-            Move();
-            Jump();
-            ChangeDirection();
-        }
-        else
-        {
-            KickBackCounter -= Time.deltaTime;
-
-            if(canChangeDirection)
+            if (KickBackCounter <= 0)
             {
-                rigidBody2D.velocity = new Vector2(-KickBackStrength, rigidBody2D.velocity.y);
+
+                Move();
+                Jump();
+                ChangeDirection();
             }
             else
             {
-                rigidBody2D.velocity = new Vector2(KickBackStrength, rigidBody2D.velocity.y);
+                KickBackCounter -= Time.deltaTime;
+
+                if (canChangeDirection)
+                {
+                    rigidBody2D.velocity = new Vector2(-KickBackStrength, rigidBody2D.velocity.y);
+                }
+                else
+                {
+                    rigidBody2D.velocity = new Vector2(KickBackStrength, rigidBody2D.velocity.y);
+                }
             }
+
+
+
+            animator.SetFloat("MovementSpeed", Mathf.Abs(rigidBody2D.velocity.x));
+            animator.SetBool("IsItOnTheGround", IsItOnTheGround);
         }
-
-
-
-        animator.SetFloat("MovementSpeed", Mathf.Abs(rigidBody2D.velocity.x));
-        animator.SetBool("IsItOnTheGround", IsItOnTheGround);
+        else
+        {
+            rigidBody2D.velocity = Vector2.zero;
+            animator.SetFloat("MovementSpeed", Mathf.Abs(rigidBody2D.velocity.x));
+        }
 
     }
 
