@@ -13,7 +13,7 @@ public class UIBehaviour : MonoBehaviour
 
 
     [SerializeField]
-    Sprite fullheart, halfheart, emptyheart;
+    Sprite fullheart, emptyheart;
 
     PlayerHealtBehaviour playerHealtBehaviour;
     LevelManager levelManager;
@@ -37,38 +37,21 @@ public class UIBehaviour : MonoBehaviour
         switch(playerHealtBehaviour.validHealt)
         {
 
-            case 6:
+            case 3:
                 heart1_img.sprite = fullheart;
                 heart2_img.sprite = fullheart;
                 heart3_img.sprite = fullheart;
                 break;
-
-            case 5:
-                heart1_img.sprite = fullheart;
-                heart2_img.sprite = fullheart;
-                heart3_img.sprite = halfheart;
-                break;
-
-            case 4:
-                heart1_img.sprite = fullheart;
-                heart2_img.sprite = fullheart;
-                heart3_img.sprite = emptyheart;
-                break;
-
-            case 3:
-                heart1_img.sprite = fullheart;
-                heart2_img.sprite = halfheart;
-                heart3_img.sprite = emptyheart;
-                break;
+ 
 
             case 2:
                 heart1_img.sprite = fullheart;
-                heart2_img.sprite = emptyheart;
+                heart2_img.sprite = fullheart;
                 heart3_img.sprite = emptyheart;
                 break;
-
+           
             case 1:
-                heart1_img.sprite = halfheart;
+                heart1_img.sprite = fullheart;
                 heart2_img.sprite = emptyheart;
                 heart3_img.sprite = emptyheart;
                 break;

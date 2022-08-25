@@ -424,7 +424,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 30639059}
+      - m_Target: {fileID: 2137763021}
         m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
         m_MethodName: LoadMenu
         m_Mode: 1
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18d78f28404b1e428f101e6db5f59ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Level1
+  sceneName: Level2
 --- !u!1 &1379992098
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,7 +662,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 30639059}
+      - m_Target: {fileID: 2137763021}
         m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -1083,7 +1083,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 30639059}
+      - m_Target: {fileID: 2137763021}
         m_TargetAssemblyTypeName: PausePanel, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -1936,6 +1936,7 @@ GameObject:
   - component: {fileID: 3941059149516461236}
   - component: {fileID: 3941059149516461237}
   - component: {fileID: 3941059149516461234}
+  - component: {fileID: 2137763021}
   m_Layer: 5
   m_Name: UI Canvas
   m_TagString: Untagged
@@ -2048,8 +2049,20 @@ MonoBehaviour:
   halfheart: {fileID: 2139837793675082937, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
   emptyheart: {fileID: -4390673095631447188, guid: d9a616f95048ea84e8fc6f7920f846b8, type: 3}
   FadeScreen: {fileID: 1112238347131179915}
-  pausePanel: {fileID: 8115682694871206469}
   JewelsTxt: {fileID: 3941059148768494271}
+--- !u!114 &2137763021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3941059149516461235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8011f89e2a54bba428d4d2cf5e298b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 8115682694871206469}
 --- !u!1 &8115682694871206469
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,14 +2074,14 @@ GameObject:
   - component: {fileID: 5449548791688094798}
   - component: {fileID: 4574729826779797058}
   - component: {fileID: 5947114078555730613}
-  - component: {fileID: 30639059}
+  - component: {fileID: 524784421}
   m_Layer: 5
   m_Name: PausePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5449548791688094798
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2130,7 +2143,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &30639059
+--- !u!114 &524784421
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
