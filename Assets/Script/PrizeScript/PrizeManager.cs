@@ -8,7 +8,7 @@ public class PrizeManager : MonoBehaviour
     PlayerHealtBehaviour playerHealtBehaviour;
 
     [SerializeField]
-    bool ýsItJewel, isItCherry;
+    bool isItJewel, isItCherry;
 
     [SerializeField]
     GameObject collection;
@@ -32,7 +32,7 @@ public class PrizeManager : MonoBehaviour
         if(other.CompareTag("Player") && !hasItGathered)
         {
 
-            if (ýsItJewel)
+            if (isItJewel)
             {
                 levelManager.theNumberOfJewelsCollected++;
 
