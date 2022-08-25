@@ -98,11 +98,11 @@ public class PlayerHealtBehaviour : MonoBehaviour
 
     }
 
-    void GameOver()
+    public void GameOver()
     {
         gameOver = true;
-        gameOverPanel.GetComponent<CanvasGroup>().DOFade(1, .5f);
-        gameOverPanel.GetComponent<RectTransform>().DOScale(1, .5f);
+        gameOverPanel.GetComponent<CanvasGroup>().DOFade(1, 0.5f);
+        gameOverPanel.GetComponent<RectTransform>().DOScale(1, 0.5f);
 
 
     }

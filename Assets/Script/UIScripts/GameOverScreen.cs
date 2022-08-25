@@ -7,15 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
-    public string sceneName;
-
-    PlayerHealtBehaviour playerHealtBehaviour;
-
-    private void Awake()
-    {
-        playerHealtBehaviour = Object.FindObjectOfType<PlayerHealtBehaviour>();
-    }
-
+  
     public void Restart()
     {
         StartCoroutine(OpenGameRoutine());
@@ -30,7 +22,7 @@ public class GameOverScreen : MonoBehaviour
 
         yield return new WaitForSeconds(.1f);
 
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
 

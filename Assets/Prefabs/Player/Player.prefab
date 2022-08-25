@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Extinction: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
-  chanceOfCherry: 100
+  chanceOfCherry: 80
   cherryObject: {fileID: 7134917598569241078, guid: 51b523ebc824ece4fab3016de8c9433d, type: 3}
 --- !u!1 &7092661832893844197
 GameObject:
@@ -250,6 +250,7 @@ MonoBehaviour:
     m_Bits: 64
   KickBackTime: 0.25
   KickBackStrength: 5
+  shouldMove: 1
   JumpJumpPower: 20
 --- !u!95 &7092661833634929778
 Animator:
@@ -282,7 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd11f2c83a88bc44487415993f365c53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealt: 6
+  maxHealt: 3
   validHealt: 0
+  gameOver: 0
+  gameOverPanel: {fileID: 0}
   disappearanceEffectObject: {fileID: 4723060777245016171, guid: d23fb4a4165f9e24488b2807a03f9292, type: 3}
   invincibilityTime: 2
