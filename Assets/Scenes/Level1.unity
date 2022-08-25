@@ -2411,6 +2411,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1228100729, guid: 7a18c3990554372488037d752f05796d, type: 3}
+      propertyPath: sceneName
+      value: Level1
+      objectReference: {fileID: 0}
     - target: {fileID: 3941059149516461235, guid: 7a18c3990554372488037d752f05796d, type: 3}
       propertyPath: m_Name
       value: UI Canvas

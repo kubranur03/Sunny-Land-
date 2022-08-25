@@ -40006,6 +40006,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1228100729, guid: 7a18c3990554372488037d752f05796d, type: 3}
+      propertyPath: sceneName
+      value: Level2
+      objectReference: {fileID: 0}
     - target: {fileID: 3941059149516461235, guid: 7a18c3990554372488037d752f05796d, type: 3}
       propertyPath: m_Name
       value: UI Canvas
@@ -40980,7 +40984,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7814310881956103787, guid: 873e9aad3c80906419e8e82903a98a62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.600002
+      value: 1.0000019
       objectReference: {fileID: 0}
     - target: {fileID: 7814310881956103787, guid: 873e9aad3c80906419e8e82903a98a62, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41045,7 +41049,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5210433245220673847, guid: cdaaced4b84095040a8442cecd5da1c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.600002
+      value: 1.0000019
       objectReference: {fileID: 0}
     - target: {fileID: 5210433245220673847, guid: cdaaced4b84095040a8442cecd5da1c3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -44666,7 +44670,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7092661833634929774, guid: fd2c105e089a81942aa9a0b96f264c4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.6
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 7092661833634929774, guid: fd2c105e089a81942aa9a0b96f264c4f, type: 3}
       propertyPath: m_LocalPosition.y
