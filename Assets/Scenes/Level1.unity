@@ -174,22 +174,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
       value: jewels 2 (7)
@@ -391,30 +375,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: jewels 3 (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018782, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018783, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182394, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182395, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541666, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541667, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6388412345810379647, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -516,22 +476,6 @@ PrefabInstance:
     - target: {fileID: 1812831401198125405, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
@@ -772,30 +716,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: jewels 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018782, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018783, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182394, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182395, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541666, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541667, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6388412345810379647, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1021,22 +941,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
       value: jewels 2 (3)
@@ -1223,22 +1127,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
       value: jewels 2 (5)
@@ -1260,30 +1148,6 @@ PrefabInstance:
     - target: {fileID: 125344479720162783, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
       propertyPath: m_Name
       value: jewels 3 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018782, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018783, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182394, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182395, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541666, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541667, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6388412345810379647, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
       propertyPath: m_RootOrder
@@ -1443,22 +1307,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
       value: jewels 2 (9)
@@ -1520,22 +1368,6 @@ PrefabInstance:
     - target: {fileID: 1812831401198125405, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
@@ -1618,22 +1450,6 @@ PrefabInstance:
     - target: {fileID: 1812831401198125405, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
@@ -1958,22 +1774,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
       value: jewels 2 (1)
@@ -2163,22 +1963,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
       value: jewels 2 (8)
@@ -2200,30 +1984,6 @@ PrefabInstance:
     - target: {fileID: 125344479720162783, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
       propertyPath: m_Name
       value: jewels 3 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018782, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018783, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182394, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182395, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541666, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541667, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6388412345810379647, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
       propertyPath: m_RootOrder
@@ -2429,30 +2189,6 @@ PrefabInstance:
     - target: {fileID: 125344479720162783, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
       propertyPath: m_Name
       value: jewels 3 (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018782, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018783, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182394, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182395, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541666, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541667, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6388412345810379647, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
       propertyPath: m_RootOrder
@@ -2854,30 +2590,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: jewels 3
       objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018782, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4288013117500018783, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182394, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145169939182395, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541666, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5270145170988541667, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6388412345810379647, guid: 68e54793ef3616e4a90f6dfba8911867, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2949,11 +2661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5210433245220673847, guid: cdaaced4b84095040a8442cecd5da1c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.30000162
+      value: 0.5000019
       objectReference: {fileID: 0}
     - target: {fileID: 5210433245220673847, guid: cdaaced4b84095040a8442cecd5da1c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7300002
+      value: 0.7900002
       objectReference: {fileID: 0}
     - target: {fileID: 5210433245220673847, guid: cdaaced4b84095040a8442cecd5da1c3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3002,7 +2714,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6730793715449042412, guid: a03e9de34735f934f875148d06a8cdcd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 48
+      value: 47.2
       objectReference: {fileID: 0}
     - target: {fileID: 6730793715449042412, guid: a03e9de34735f934f875148d06a8cdcd, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3063,11 +2775,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7092661833634929774, guid: fd2c105e089a81942aa9a0b96f264c4f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.9
+      value: -5.7
       objectReference: {fileID: 0}
     - target: {fileID: 7092661833634929774, guid: fd2c105e089a81942aa9a0b96f264c4f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 7092661833634929774, guid: fd2c105e089a81942aa9a0b96f264c4f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -39001,22 +38713,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150870, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600534087150871, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688236, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1861600535409688237, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
-      propertyPath: isItJewel
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3729344696049464926, guid: a11b5e7bccceb144a904ace8e592368b, type: 3}
       propertyPath: m_Name
       value: jewels 2
@@ -39044,11 +38740,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7814310881956103787, guid: 873e9aad3c80906419e8e82903a98a62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.30000162
+      value: 0.5000019
       objectReference: {fileID: 0}
     - target: {fileID: 7814310881956103787, guid: 873e9aad3c80906419e8e82903a98a62, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.7300002
+      value: 0.7900002
       objectReference: {fileID: 0}
     - target: {fileID: 7814310881956103787, guid: 873e9aad3c80906419e8e82903a98a62, type: 3}
       propertyPath: m_LocalPosition.z
