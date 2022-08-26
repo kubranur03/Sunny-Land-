@@ -111,6 +111,8 @@ public class PlayerController : MonoBehaviour
             {
                 rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, JumpingPower);
 
+                AudioManager.instance.MakeASoundEffect(3);
+
             }
             else
             {
@@ -118,6 +120,7 @@ public class PlayerController : MonoBehaviour
                 {
                     rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, JumpingPower);
                     CanJumpTwice = false;
+                    AudioManager.instance.MakeASoundEffect(3);
                 }
                 
 
@@ -158,6 +161,7 @@ public class PlayerController : MonoBehaviour
     public void JumpJump()
     {
         rigidBody2D.velocity = new Vector2(rigidBody2D.velocity.x, JumpJumpPower);
+        AudioManager.instance.MakeASoundEffect(3);
     }
 
 

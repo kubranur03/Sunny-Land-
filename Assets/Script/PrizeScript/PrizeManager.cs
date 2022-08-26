@@ -42,7 +42,8 @@ public class PrizeManager : MonoBehaviour
                 uIBehaviour.UpdateJewelCount();
 
                 Instantiate(collection, transform.position, transform.rotation);
-                
+                AudioManager.instance.MakeASoundEffect(7);
+
 
             }
 
@@ -56,7 +57,7 @@ public class PrizeManager : MonoBehaviour
                     playerHealtBehaviour.IncreaseHealth();
 
                     Instantiate(collection, transform.position, transform.rotation);
-
+                    AudioManager.instance.MakeASoundEffect(4);
 
                 }
 

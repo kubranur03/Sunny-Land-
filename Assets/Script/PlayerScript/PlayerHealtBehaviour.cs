@@ -69,6 +69,7 @@ public class PlayerHealtBehaviour : MonoBehaviour
                 validHealt = 0;
                 gameObject.SetActive(false);
                 Instantiate(disappearanceEffectObject, transform.position, transform.rotation);
+                AudioManager.instance.MakeASoundEffect(2);
                 GameOver();
 
             }
@@ -77,6 +78,7 @@ public class PlayerHealtBehaviour : MonoBehaviour
                 invincibilityCounter = invincibilityTime ;
                 spriteRenderer.color = new Color(spriteRenderer.color.r, spriteRenderer.color.g, spriteRenderer.color.b, 0.5f);
 
+                AudioManager.instance.MakeASoundEffect(1);
                 playerController.KickBack();
             }
 
